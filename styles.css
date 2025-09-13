@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Layout principal */
+.main-container {
+  display: flex;
+  margin-top: 70px;
+  height: calc(100vh - 70px);
+}
+
+/* Sidebar de clientes */
+.sidebar {
+  width: 350px;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  overflow-y: auto;
+  border-right: 1px solid #e9ecef;
+}
+
+.sidebar h2 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.client-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #dc3545;
+}
+
+/* Updated border colors to match the map markers */
+.client-card:nth-child(2) {
+  border-left-color: #dc3545;
+} /* João Silva - Red */
+.client-card:nth-child(3) {
+  border-left-color: #ffd000;
+} /* Maria Santos - Blue */
+.client-card:nth-child(4) {
+  border-left-color: #ffd000;
+} /* Carlos Oliveira - Green */
+.client-card:nth-child(5) {
+  border-left-color: #ffd000;
+} /* Ana Costa - Purple */
+
+.client-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.client-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.client-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.client-info {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.client-info div {
+  margin-bottom: 0.3rem;
+}
+
+.client-info strong {
+  color: #495057;
+}
+
+.service-type {
+  display: inline-block;
+  background-color: #e9ecef;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  color: #495057;
+}
+
+/* Área do mapa */
+.map-container {
+  flex: 1;
+  position: relative;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 300px;
+  }
+
+  .map-container {
+    height: calc(100vh - 370px);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .sidebar {
+    padding: 1rem;
+    height: 250px;
+  }
+
+  .client-card {
+    padding: 0.8rem;
+  }
+
+  .client-info {
+    font-size: 0.8rem;
+  }
+}
